@@ -6,6 +6,7 @@ import org.bukkit.plugin.java.JavaPlugin;
 
 import me.mrCookieSlime.CSCoreLibPlugin.general.Inventory.Item.CustomItem;
 import me.mrCookieSlime.CSCoreLibPlugin.general.World.CustomSkull;
+import me.mrCookieSlime.Slimefun.Lists.RecipeType;
 import me.mrCookieSlime.Slimefun.Lists.SlimefunItems;
 import me.mrCookieSlime.Slimefun.Objects.Category;
 import me.mrCookieSlime.Slimefun.bstats.bukkit.Metrics;
@@ -34,6 +35,12 @@ public class OreChunks extends JavaPlugin {
 			new OreChunk(category, "ALUMINUM_ORE_CHUNK", "Aluminum Ore Chunk", 4, "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNDY3MzIzNjhjOTgwYjRjMjc0OTU2NjRiZDUwYjU4MjBjYzM3YzU3M2ZiMzdhODhmMzRjNWQzYTBkZWM2NjIxOSJ9fX0=", SlimefunItems.ALUMINUM_DUST);
 			new OreChunk(category, "LEAD_ORE_CHUNK", "Lead Ore Chunk", 2, "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMjMzM2ZjZWMwN2M4OWM1ZmRiODg2Y2FmNWUzZWJmOGM2YTUzNmRkNjYyYjMxZjkxYzFhNmRiZDkxM2JjM2RiMCJ9fX0=", SlimefunItems.LEAD_DUST);
 			new OreChunk(category, "ZINC_ORE_CHUNK", "Zinc Ore Chunk", 3, "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNjNmODJmMjAyNjZiNGI4ZTA0NTYxMTAzNzlmOTQxZmNhMTY0MTM4NDZlMjMxZThhYzIwMmRjMmNhZjdmZmI0MSJ9fX0=", SlimefunItems.ZINC_DUST);
+
+			new OreChunk(category, "NICKEL_ORE_CHUNK", "Nickel Ore Chunk", "&7You can smelt this into an Ingot in a Smeltery", 2, "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvM2JhMzBkZjgzMTZjZGZlM2M1YjFhZDdhYTk3NzVjOTRjM2FkNWU1MDJlYTEyNTRlZmViNDEzNDRmNzk2MjM4MSJ9fX0=", 
+			RecipeType.SMELTERY, SlimefunItems.NICKEL_INGOT);
+			
+			new OreChunk(category, "COBALT_ORE_CHUNK", "Cobalt Ore Chunk", "&7You can smelt this into an Ingot in a Smeltery", 1, "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZWM1NGE1NGIxYTQ5YzI5Njg2YmUxYzZlM2UwNWRkMDY4Zjg1ZTk5NGM4Yzg5MzgzOGNjNTg3OGI1NDQ2YmM4YSJ9fX0=", 
+			RecipeType.SMELTERY, SlimefunItems.COBALT_INGOT);
 		}
 		catch(Exception x) {
 			getLogger().log(Level.SEVERE, "An Error occured while loading the Plugin SlimefunOreChunks v" + getDescription().getVersion(), x);
