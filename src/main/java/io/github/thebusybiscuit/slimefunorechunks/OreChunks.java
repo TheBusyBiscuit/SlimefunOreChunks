@@ -21,7 +21,7 @@ public class OreChunks extends JavaPlugin {
 		new Metrics(this);
 		
 		if (cfg.getBoolean("options.auto-update") && getDescription().getVersion().startsWith("DEV - ")) {
-			new GitHubBuildsUpdater(this, getFile(), "TheBusyBiscuit/SlimefunOreChunks/master").start();;
+			new GitHubBuildsUpdater(this, getFile(), "TheBusyBiscuit/SlimefunOreChunks/master").start();
 		}
 		
 		try {
