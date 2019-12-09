@@ -5,8 +5,6 @@ import java.util.concurrent.ThreadLocalRandom;
 import org.bukkit.block.Biome;
 import org.bukkit.inventory.ItemStack;
 
-import me.mrCookieSlime.CSCoreLibPlugin.general.Inventory.Item.CustomItem;
-import me.mrCookieSlime.CSCoreLibPlugin.general.World.CustomSkull;
 import me.mrCookieSlime.Slimefun.GEO.OreGenResource;
 import me.mrCookieSlime.Slimefun.GEO.OreGenSystem;
 import me.mrCookieSlime.Slimefun.Lists.RecipeType;
@@ -14,6 +12,7 @@ import me.mrCookieSlime.Slimefun.Lists.SlimefunItems;
 import me.mrCookieSlime.Slimefun.Objects.Category;
 import me.mrCookieSlime.Slimefun.Objects.SlimefunItem.SlimefunItem;
 import me.mrCookieSlime.Slimefun.Objects.SlimefunItem.SlimefunMachine;
+import me.mrCookieSlime.Slimefun.api.SlimefunItemStack;
 
 public class OreChunk extends SlimefunItem implements OreGenResource {
 
@@ -28,7 +27,7 @@ public class OreChunk extends SlimefunItem implements OreGenResource {
 	}
 	
 	public OreChunk(Category category, String id, String name, String lore, int amplifier, String texture, RecipeType machine, ItemStack output) throws Exception {
-		super(category, new CustomItem(CustomSkull.getItem(texture), "&r" + name, lore), id, new RecipeType(SlimefunItems.GEO_MINER), new ItemStack[0]);
+		super(category, new SlimefunItemStack(id, texture, "&r" + name, lore), id, new RecipeType(SlimefunItems.GEO_MINER), new ItemStack[0]);
 		
 		this.amplifier = amplifier;
 		this.name = name;
