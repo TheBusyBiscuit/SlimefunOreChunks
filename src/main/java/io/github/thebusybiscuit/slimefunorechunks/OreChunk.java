@@ -1,5 +1,8 @@
 package io.github.thebusybiscuit.slimefunorechunks;
 
+import java.util.Locale;
+
+import org.bukkit.NamespacedKey;
 import org.bukkit.inventory.ItemStack;
 
 import me.mrCookieSlime.Slimefun.Lists.RecipeType;
@@ -17,11 +20,11 @@ public class OreChunk extends SlimefunItem {
 	private SlimefunMachine machine;
 	private ItemStack output;
 	
-	public OreChunk(Category category, String id, String name, int amplifier, String texture, ItemStack output) {
-		this(category, id, name, "&7Use an Ore Crusher to turn this into Dust", amplifier, texture, RecipeType.ORE_CRUSHER, output);
+	public OreChunk(OreChunks plugin, Category category, String id, String name, int amplifier, String texture, ItemStack output) {
+		this(plugin, category, id, name, "&7Use an Ore Crusher to turn this into Dust", amplifier, texture, RecipeType.ORE_CRUSHER, output);
 	}
 	
-	public OreChunk(Category category, String id, String name, String lore, int amplifier, String texture, RecipeType machine, ItemStack output) {
+	public OreChunk(OreChunks plugin, Category category, String id, String name, String lore, int amplifier, String texture, RecipeType machine, ItemStack output) {
 		super(category, new SlimefunItemStack(id, texture, "&r" + name, lore), new RecipeType(SlimefunItems.GEO_MINER), new ItemStack[0]);
 		
 		this.amplifier = amplifier;
@@ -30,6 +33,8 @@ public class OreChunk extends SlimefunItem {
 		this.machine = (SlimefunMachine) machine.getMachine();
 		this.output = output;
 		register();
+		
+		new OreResource(new NamespacedKey(plugin, id.toLowerCase(Locale.ROOT)), this).register();
 	}
 	
 	public String getName() {
