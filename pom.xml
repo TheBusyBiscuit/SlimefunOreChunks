@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>io.github.thebusybiscuit</groupId>
   <artifactId>SlimefunOreChunks</artifactId>
-  <version>1.0.0</version>
+  <version>UNOFFICIAL</version>
   
   <properties>
   	<maven.compiler.source>1.8</maven.compiler.source>
@@ -52,14 +52,34 @@
   	<dependency>
   		<groupId>com.github.TheBusyBiscuit</groupId>
   		<artifactId>CS-CoreLib</artifactId>
-  		<version>aaef21bd15</version>
+  		<version>6e17183656</version>
   		<scope>provided</scope>
+  		<exclusions>
+  			<exclusion>
+  				<groupId>io.github.thebusybiscuit</groupId>
+  				<artifactId>cscorelib2</artifactId>
+  			</exclusion>
+  			<exclusion>
+  				<groupId>org.bstats</groupId>
+  				<artifactId>bstats-bukkit</artifactId>
+  			</exclusion>
+  		</exclusions>
   	</dependency>
   	<dependency>
   		<groupId>com.github.TheBusyBiscuit</groupId>
   		<artifactId>Slimefun4</artifactId>
-  		<version>cb2e12946f</version>
+  		<version>7dc349a2bc</version>
   		<scope>provided</scope>
+  		<exclusions>
+  			<exclusion>
+  				<groupId>io.github.thebusybiscuit</groupId>
+  				<artifactId>cscorelib2</artifactId>
+  			</exclusion>
+  			<exclusion>
+  				<groupId>org.bstats</groupId>
+  				<artifactId>bstats-bukkit</artifactId>
+  			</exclusion>
+  		</exclusions>
   	</dependency>
   </dependencies>
 </project>

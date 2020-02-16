@@ -3,6 +3,7 @@ package io.github.thebusybiscuit.slimefunorechunks;
 import org.bukkit.NamespacedKey;
 import org.bukkit.plugin.java.JavaPlugin;
 
+import io.github.thebusybiscuit.slimefun4.api.SlimefunAddon;
 import me.mrCookieSlime.CSCoreLibPlugin.general.Inventory.Item.CustomItem;
 import me.mrCookieSlime.Slimefun.Lists.RecipeType;
 import me.mrCookieSlime.Slimefun.Lists.SlimefunItems;
@@ -12,7 +13,7 @@ import me.mrCookieSlime.Slimefun.cscorelib2.config.Config;
 import me.mrCookieSlime.Slimefun.cscorelib2.skull.SkullItem;
 import me.mrCookieSlime.Slimefun.cscorelib2.updater.GitHubBuildsUpdater;
 
-public class OreChunks extends JavaPlugin {
+public class OreChunks extends JavaPlugin implements SlimefunAddon {
 	
 	@Override
 	public void onEnable() {
@@ -23,22 +24,47 @@ public class OreChunks extends JavaPlugin {
 			new GitHubBuildsUpdater(this, getFile(), "TheBusyBiscuit/SlimefunOreChunks/master").start();
 		}
 		
-		Category category = new Category(new NamespacedKey(this, "ore_chunks"), new CustomItem(SkullItem.fromBase64("eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZGRlOGY5NDliYmYzYTQyNzgyYzUzMWZiZjhkZTlkYzJkOGNkODRkZDdjYjhmNWQ1MzI4ZWVkYTgzOTU2YWFjOCJ9fX0="), "&6Ore Chunks", "", "&a> Click to open"));
+		Category category = new Category(new NamespacedKey(this, "ore_chunks"), new CustomItem(SkullItem.fromHash("de8f949bbf3a42782c531fbf8de9dc2d8cd84dd7cb8f5d5328eeda83956aac8"), "&6Ore Chunks"));
 		
-		new OreChunk(this, category, "IRON_ORE_CHUNK", "Iron Ore Chunk", 4, "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNDRjYzFjY2M3NWQwZjcyNGFmOGE1ZmUyNzNlZGFmNGM2ZDU5NTFmOWU0ZDAzOGY5ZjE2ZTRmMjY3M2NlMzgzMyJ9fX0=", SlimefunItems.IRON_DUST);
-		new OreChunk(this, category, "GOLD_ORE_CHUNK", "Gold Ore Chunk", 2, "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMzE4NDQ3OGIyMTE0MzlmM2UyYzUwOWMzNDI0ZWE1ZmYyZmNlNzM4MjVjOGJlYmY5NmNmY2NkMTAzZTQ5MjJlYiJ9fX0=", SlimefunItems.GOLD_DUST);
-		new OreChunk(this, category, "COPPER_ORE_CHUNK", "Copper Ore Chunk", 5, "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNjBkNzQ4NzU3ZDZlZmRkZGU4NTJlMGE0YTFhOWI5MmYyZTRjNThiMWVhOWExNzMxYTMyZjZjZWRmMmMyM2IzNiJ9fX0=", SlimefunItems.COPPER_DUST);
-		new OreChunk(this, category, "TIN_ORE_CHUNK", "Tin Ore Chunk", 3, "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZGUyYzk1NTE3N2ZmNjVhMmQ1NWFmMTc3NDM3NTUwOTBhNWE2YjY4YjM1ODZjY2JjMzFhMzQyZGFkOWVmNzc5OSJ9fX0=", SlimefunItems.TIN_DUST);
-		new OreChunk(this, category, "SILVER_ORE_CHUNK", "Silver Ore Chunk", 2, "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZGRlOGY5NDliYmYzYTQyNzgyYzUzMWZiZjhkZTlkYzJkOGNkODRkZDdjYjhmNWQ1MzI4ZWVkYTgzOTU2YWFjOCJ9fX0=", SlimefunItems.SILVER_DUST);
-		new OreChunk(this, category, "ALUMINUM_ORE_CHUNK", "Aluminum Ore Chunk", 4, "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNDY3MzIzNjhjOTgwYjRjMjc0OTU2NjRiZDUwYjU4MjBjYzM3YzU3M2ZiMzdhODhmMzRjNWQzYTBkZWM2NjIxOSJ9fX0=", SlimefunItems.ALUMINUM_DUST);
-		new OreChunk(this, category, "LEAD_ORE_CHUNK", "Lead Ore Chunk", 2, "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMjMzM2ZjZWMwN2M4OWM1ZmRiODg2Y2FmNWUzZWJmOGM2YTUzNmRkNjYyYjMxZjkxYzFhNmRiZDkxM2JjM2RiMCJ9fX0=", SlimefunItems.LEAD_DUST);
-		new OreChunk(this, category, "ZINC_ORE_CHUNK", "Zinc Ore Chunk", 3, "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNjNmODJmMjAyNjZiNGI4ZTA0NTYxMTAzNzlmOTQxZmNhMTY0MTM4NDZlMjMxZThhYzIwMmRjMmNhZjdmZmI0MSJ9fX0=", SlimefunItems.ZINC_DUST);
+		new OreChunk(this, category, "IRON_ORE_CHUNK", "Iron Ore Chunk", 4, "4cc1ccc75d0f724af8a5fe273edaf4c6d5951f9e4d038f9f16e4f2673ce3833", 
+		SlimefunItems.IRON_DUST).register(this);
+		
+		new OreChunk(this, category, "GOLD_ORE_CHUNK", "Gold Ore Chunk", 2, "184478b211439f3e2c509c3424ea5ff2fce73825c8bebf96cfccd103e4922eb", 
+		SlimefunItems.GOLD_DUST).register(this);
+		
+		new OreChunk(this, category, "COPPER_ORE_CHUNK", "Copper Ore Chunk", 5, "0d748757d6efddde852e0a4a1a9b92f2e4c58b1ea9a1731a32f6cedf2c23b36", 
+		SlimefunItems.COPPER_DUST).register(this);
+		
+		new OreChunk(this, category, "TIN_ORE_CHUNK", "Tin Ore Chunk", 3, "e2c955177ff65a2d55af17743755090a5a6b68b3586ccbc31a342dad9ef7799", 
+		SlimefunItems.TIN_DUST).register(this);
+		
+		new OreChunk(this, category, "SILVER_ORE_CHUNK", "Silver Ore Chunk", 2, "de8f949bbf3a42782c531fbf8de9dc2d8cd84dd7cb8f5d5328eeda83956aac8", 
+		SlimefunItems.SILVER_DUST).register(this);
+		
+		new OreChunk(this, category, "ALUMINUM_ORE_CHUNK", "Aluminum Ore Chunk", 4, "6732368c980b4c27495664bd50b5820cc37c573fb37a88f34c5d3a0dec66219", 
+		SlimefunItems.ALUMINUM_DUST).register(this);
+		
+		new OreChunk(this, category, "LEAD_ORE_CHUNK", "Lead Ore Chunk", 2, "333fcec07c89c5fdb886caf5e3ebf8c6a536dd662b31f91c1a6dbd913bc3db0", 
+		SlimefunItems.LEAD_DUST).register(this);
+		
+		new OreChunk(this, category, "ZINC_ORE_CHUNK", "Zinc Ore Chunk", 3, "3f82f20266b4b8e0456110379f941fca16413846e231e8ac202dc2caf7ffb41", 
+		SlimefunItems.ZINC_DUST).register(this);
 
-		new OreChunk(this, category, "NICKEL_ORE_CHUNK", "Nickel Ore Chunk", "&7You can smelt this into an Ingot in a Smeltery", 2, "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvM2JhMzBkZjgzMTZjZGZlM2M1YjFhZDdhYTk3NzVjOTRjM2FkNWU1MDJlYTEyNTRlZmViNDEzNDRmNzk2MjM4MSJ9fX0=", 
-		RecipeType.SMELTERY, SlimefunItems.NICKEL_INGOT);
+		new OreChunk(this, category, "NICKEL_ORE_CHUNK", "Nickel Ore Chunk", "&7You can smelt this into an Ingot in a Smeltery", 2, "ba30df8316cdfe3c5b1ad7aa9775c94c3ad5e502ea1254efeb41344f7962381", 
+		RecipeType.SMELTERY, SlimefunItems.NICKEL_INGOT).register(this);
 		
-		new OreChunk(this, category, "COBALT_ORE_CHUNK", "Cobalt Ore Chunk", "&7You can smelt this into an Ingot in a Smeltery", 1, "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZWM1NGE1NGIxYTQ5YzI5Njg2YmUxYzZlM2UwNWRkMDY4Zjg1ZTk5NGM4Yzg5MzgzOGNjNTg3OGI1NDQ2YmM4YSJ9fX0=", 
-		RecipeType.SMELTERY, SlimefunItems.COBALT_INGOT);
+		new OreChunk(this, category, "COBALT_ORE_CHUNK", "Cobalt Ore Chunk", "&7You can smelt this into an Ingot in a Smeltery", 1, "c54a54b1a49c29686be1c6e3e05dd068f85e994c8c893838cc5878b5446bc8a", 
+		RecipeType.SMELTERY, SlimefunItems.COBALT_INGOT).register(this);
+	}
+
+	@Override
+	public JavaPlugin getJavaPlugin() {
+		return this;
+	}
+
+	@Override
+	public String getBugTrackerURL() {
+		return "https://github.com/TheBusyBiscuit/SlimefunOreChunks/issues";
 	}
 
 }

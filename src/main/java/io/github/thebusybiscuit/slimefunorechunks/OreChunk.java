@@ -32,7 +32,6 @@ public class OreChunk extends SlimefunItem {
 		
 		this.machine = (SlimefunMachine) machine.getMachine();
 		this.output = output;
-		register();
 		
 		new OreResource(new NamespacedKey(plugin, id.toLowerCase(Locale.ROOT)), this).register();
 	}
