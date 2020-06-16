@@ -5,10 +5,10 @@ import java.util.Locale;
 import org.bukkit.NamespacedKey;
 import org.bukkit.inventory.ItemStack;
 
+import io.github.thebusybiscuit.slimefun4.core.multiblocks.MultiBlockMachine;
 import me.mrCookieSlime.Slimefun.Lists.RecipeType;
 import me.mrCookieSlime.Slimefun.Objects.Category;
 import me.mrCookieSlime.Slimefun.Objects.SlimefunItem.SlimefunItem;
-import me.mrCookieSlime.Slimefun.Objects.SlimefunItem.SlimefunMachine;
 import me.mrCookieSlime.Slimefun.api.SlimefunItemStack;
 
 public class OreChunk extends SlimefunItem {
@@ -16,7 +16,7 @@ public class OreChunk extends SlimefunItem {
     private final int amplifier;
     private final String name;
 
-    private final SlimefunMachine machine;
+    private final MultiBlockMachine machine;
     private final ItemStack output;
 
     public OreChunk(OreChunks plugin, Category category, String id, String name, int amplifier, String texture, ItemStack output) {
@@ -29,7 +29,7 @@ public class OreChunk extends SlimefunItem {
         this.amplifier = amplifier;
         this.name = name;
 
-        this.machine = (SlimefunMachine) machine.getMachine();
+        this.machine = (MultiBlockMachine) machine.getMachine();
         this.output = output;
 
         new OreResource(new NamespacedKey(plugin, id.toLowerCase(Locale.ROOT)), this).register();
