@@ -50,6 +50,9 @@ public class OreChunks extends JavaPlugin implements SlimefunAddon {
 		new OreChunk(this, category, "ZINC_ORE_CHUNK", "Zinc Ore Chunk", 3, "63f82f20266b4b8e0456110379f941fca16413846e231e8ac202dc2caf7ffb41", 
 		SlimefunItems.ZINC_DUST).register(this);
 
+		new OreChunk(this, category, "MAGNESIUM_ORE_CHUNK", "Magnesium Ore Chunk", 4, "e8c99d857a5b34331699ce6b5449d8d75f6c50b294ea1a29108f66ca086528bb",
+		SlimefunItems.MAGNESIUM_DUST).register(this);
+
 		new OreChunk(this, category, "NICKEL_ORE_CHUNK", "Nickel Ore Chunk", "&7You can smelt this into an Ingot in a Smeltery", 2, "3ba30df8316cdfe3c5b1ad7aa9775c94c3ad5e502ea1254efeb41344f7962381", 
 		RecipeType.SMELTERY, SlimefunItems.NICKEL_INGOT).register(this);
 		
