@@ -6,10 +6,10 @@ import org.bukkit.NamespacedKey;
 import org.bukkit.inventory.ItemStack;
 
 import io.github.thebusybiscuit.slimefun4.core.multiblocks.MultiBlockMachine;
-import me.mrCookieSlime.Slimefun.Lists.RecipeType;
-import me.mrCookieSlime.Slimefun.Objects.Category;
-import me.mrCookieSlime.Slimefun.Objects.SlimefunItem.SlimefunItem;
-import me.mrCookieSlime.Slimefun.api.SlimefunItemStack;
+import io.github.thebusybiscuit.slimefun4.api.recipes.RecipeType;
+import io.github.thebusybiscuit.slimefun4.api.items.ItemGroup;
+import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItemStack;
+import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItem;
 
 public class OreChunk extends SlimefunItem {
 
@@ -19,11 +19,11 @@ public class OreChunk extends SlimefunItem {
     private final MultiBlockMachine machine;
     private final ItemStack output;
 
-    public OreChunk(OreChunks plugin, Category category, String id, String name, int amplifier, String texture, ItemStack output) {
+    public OreChunk(OreChunks plugin, ItemGroup category, String id, String name, int amplifier, String texture, ItemStack output) {
         this(plugin, category, id, name, "&7Use an Ore Crusher to turn this into Dust", amplifier, texture, RecipeType.ORE_CRUSHER, output);
     }
 
-    public OreChunk(OreChunks plugin, Category category, String id, String name, String lore, int amplifier, String texture, RecipeType machine, ItemStack output) {
+    public OreChunk(OreChunks plugin, ItemGroup category, String id, String name, String lore, int amplifier, String texture, RecipeType machine, ItemStack output) {
         super(category, new SlimefunItemStack(id, texture, "&r" + name, lore), RecipeType.GEO_MINER, new ItemStack[0]);
 
         this.amplifier = amplifier;
