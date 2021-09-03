@@ -19,12 +19,12 @@ public class OreChunk extends SlimefunItem {
     private final MultiBlockMachine machine;
     private final ItemStack output;
 
-    public OreChunk(OreChunks plugin, ItemGroup category, String id, String name, int amplifier, String texture, ItemStack output) {
-        this(plugin, category, id, name, "&7Use an Ore Crusher to turn this into Dust", amplifier, texture, RecipeType.ORE_CRUSHER, output);
+    public OreChunk(OreChunks plugin, ItemGroup itemGroup, String id, String name, int amplifier, String texture, ItemStack output) {
+        this(plugin, itemGroup, id, name, "&7Use an Ore Crusher to turn this into Dust", amplifier, texture, RecipeType.ORE_CRUSHER, output);
     }
 
-    public OreChunk(OreChunks plugin, ItemGroup category, String id, String name, String lore, int amplifier, String texture, RecipeType machine, ItemStack output) {
-        super(category, new SlimefunItemStack(id, texture, "&r" + name, lore), RecipeType.GEO_MINER, new ItemStack[0]);
+    public OreChunk(OreChunks plugin, ItemGroup itemGroup, String id, String name, String lore, int amplifier, String texture, RecipeType machine, ItemStack output) {
+        super(itemGroup, new SlimefunItemStack(id, texture, "&r" + name, lore), RecipeType.GEO_MINER, new ItemStack[0]);
 
         this.amplifier = amplifier;
         this.name = name;
